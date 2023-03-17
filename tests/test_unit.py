@@ -1,6 +1,6 @@
 from cipher.encrypt.core import encrypt
 from cipher.decrypt.core import decrypt
-from cipher.helpers import exit_session
+from cipher.helpers import exit_session, normalize_shift
 
 
 def test_should_shift_string_by_number():
@@ -19,3 +19,9 @@ def test_should_decipher_string_by_shift():
 def test_should_return_true_to_exit_and_false_to_continue():
     assert exit_session("Yes")
     assert not exit_session("No")
+
+
+def test_should_normalize_shift_number():
+    assert normalize_shift(50) == 24
+    assert normalize_shift(24) == 24
+    assert normalize_shift(100) == 22

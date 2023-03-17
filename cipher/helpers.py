@@ -32,17 +32,24 @@ def get_shift(prompt):
     while True:
         shift = input(prompt)
         try:
-            shift = int(shift)
+            shift = normalize_shift(int(shift))
         except ValueError:
             print("Shift must be an integer.")
             continue
 
-        if shift > 25 or shift < 0:
-            print("Shift must be between 1 and 25.")
+        if shift < 0:
+            print("Shift must be larger than 0")
             continue
         else:
             break
     return shift
+
+
+def normalize_shift(shift):
+    if shift > 25:
+        return int(shift - int(shift/26) * 26)
+    else:
+        return shift
 
 
 def user_choices():
