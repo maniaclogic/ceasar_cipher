@@ -16,6 +16,8 @@ def main():
             print("Encrypted message is: ", decrypt(message, shift))
 
         exit_cipher = exit_session(input("Type Y or Yes to EXIT. Any other key to continue.\n"))
+        if exit_cipher:
+            print("Goodbye")
 
 
 main()

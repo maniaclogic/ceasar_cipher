@@ -12,6 +12,6 @@ def encrypt(message, shift):
             else:
                 encrypted_message.append(alphabet[alphabet.index(letter) + shift - 26])
         except ValueError:
-            encrypted_message.append(' ')
+            encrypted_message.append(letter)
 
     return ''.join(encrypted_message)

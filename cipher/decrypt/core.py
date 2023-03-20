@@ -12,6 +12,6 @@ def decrypt(message, shift):
             else:
                 decrypted_message.append(alphabet[alphabet.index(letter) - shift])
         except ValueError:
-            decrypted_message.append(' ')
+            decrypted_message.append(letter)
 
     return ''.join(decrypted_message)
